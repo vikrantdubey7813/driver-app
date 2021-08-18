@@ -127,13 +127,13 @@ const ChargeDashboard = () => {
 
   const handleTransactions = (transactions) => {
     setTransactions(transactions)
+    let isChargingStarted = false;
     transactions.forEach(transaction => {
       if(transaction.status === "Started"){
-        setIsChargingStarted(true)
-        return;
+        isChargingStarted = true;
       }
     })
-    setIsChargingStarted(false)
+    setIsChargingStarted(isChargingStarted)
   }
 
 
